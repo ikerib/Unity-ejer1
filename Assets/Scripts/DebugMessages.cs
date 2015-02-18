@@ -13,6 +13,7 @@ public class DebugMessages : MonoBehaviour {
 	
 	}
 
+	// Variable pública para acceso externo al script
 	public void WriteToLog(string text)
 	{
 		Debug.Log(text);
