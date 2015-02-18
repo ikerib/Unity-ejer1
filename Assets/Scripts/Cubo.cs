@@ -6,6 +6,7 @@ public class Cubo : MonoBehaviour {
 	public float velocidad;
 	public float maxLeft;
 	public float maxRight;
+	public DebugMessages dLog;
 
 	Transform myTransform;
 	int sentido;
@@ -33,6 +34,12 @@ public class Cubo : MonoBehaviour {
 		    (( myTransform.position.x >= maxRight) && (sentido == 1)))
 		{
 			sentido *= -1;
+
+			if ( sentido > 0 ) {
+				dLog.WriteToLog("Derecha");
+			} else {
+				dLog.WriteToLog("Izquierda");
+			}
 		}
 
 		myTransform.Translate (Vector3.right * velocidad * sentido * Time.deltaTime);
